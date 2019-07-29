@@ -9,7 +9,7 @@ This document has three parts.
 
 # Api Endpoints
 
-### Inventory Transfer pull/push
+### Inventory transfer pull/push
 
 ```sh
 POST v1/transfer/push?licenseeTsid={TSID}
@@ -29,7 +29,7 @@ POST v1/transfer/update?licenseeTsid={TSID}&transferTSID={tsid}
 ```
 
 
-### Lab Results endponts:
+### Lab results endponts:
 ```sh
 POST v1/lab-results/push?licenseeTsid={TSID}
 ```
@@ -40,7 +40,7 @@ POST v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
 
 # Data Contract
 
-### Transfer header only 
+### Inventory Transfer header only 
 
 ```json
 {
@@ -62,7 +62,7 @@ POST v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
 }
 ```
 
-### Transfer body
+### Inventory Transfer detail
 
 ```json
 {
@@ -71,17 +71,17 @@ POST v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
       "date_created": "2019-09-15T15:53:00+05:00",
       "date_released": "2019-09-15T15:53:00+05:00",
       "date_delevered": "2019-09-15T15:53:00+05:00",
-      "source_licensee_tsid": "WAWA1.MMS",
-      "destination_licensee_tsid": "WAWA1.MMUSO",
+      "source_licensee_tsid": "WA000.MM00000",
+      "destination_licensee_tsid": "WA0000.MM0000",
       "status": "in-transit",
       "void": "false",
       "estimated_depart_datetime": "2019-09-15T15:53:00+05:00",
       "estimated_arrival_datetime": "2019-09-15T15:53:00+05:00",
       "planned_route": "",
       "vehicle": {
-	    "make": "Ford",
+    	"make": "Ford",
         "model": "F-150",
-		"year": "2000",
+	"year": "2000",
         "color": "Yellow",
         "vin": "V383753034034",
         "license_plate": "Z27-446"
@@ -209,4 +209,5 @@ POST v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
 ```
 
 ### Lab Results 
+- to be added
 
