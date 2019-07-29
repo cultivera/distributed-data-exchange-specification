@@ -3,7 +3,7 @@
 
 This document has three parts.
 
-  - api end point Sepcifications
+  - api end point sepcifications
   - constant values specification
   - data contract specification
 
@@ -15,7 +15,7 @@ This document has three parts.
 POST v1/transfer/push?licenseeTsid={TSID}
 ```
 ```sh
-POST v1/transfer/pull?licenseeTsid={TSID}&transferTSID={tsid}&skip={int}&take={count}&status={status}
+GET v1/transfer/pull?licenseeTsid={TSID}&transferTSID={tsid}&skip={int}&take={count}&status={status}
 ```
 ### Inventory transfer action endpoints
 ```sh
@@ -34,7 +34,7 @@ POST v1/transfer/update?licenseeTsid={TSID}&transferTSID={tsid}
 POST v1/lab-results/push?licenseeTsid={TSID}
 ```
 ```sh
-POST v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
+GET v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
 ```
 
 
