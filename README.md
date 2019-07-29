@@ -1,11 +1,7 @@
 # Distributed Data Exchange Specification
 
 
-This document has three parts.
-
-  - api end point sepcifications
-  - constant values specification
-  - data contract specification
+![](Images/rest%20Api.png).
 
 # Api Endpoints
 
