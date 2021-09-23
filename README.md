@@ -5,32 +5,33 @@
 
 # Api Endpoints
 
-### Inventory transfer pull/push
+### Inventory transfer pull
 
 ```sh
-POST v1/transfer/push?licenseeTsid={TSID}
+GET /transfers/detail?transfer_tsid={transfer_tsid}
 ```
 ```sh
-GET v1/transfer/pull?licenseeTsid={TSID}&transferTSID={tsid}&skip={int}&take={count}&status={status}
+GET /transfers/list?skip={int}&take={count}&status={status}
 ```
+
 ### Inventory transfer action endpoints
 ```sh
-POST v1/transfer/accept?licenseeTsid={TSID}&transferTSID={tsid}
+POST /transfers/accept-reject?transfer_tsid={tsid}
 ```
 ```sh
-POST v1/transfer/void?licenseeTsid={TSID}&transferTSID={tsid}
+POST v1/transfer/void?transferTSID={tsid}
 ```
 ```sh
-POST v1/transfer/update?licenseeTsid={TSID}&transferTSID={tsid}
+POST v1/transfer/update?transferTSID={tsid}
 ```
 
 
 ### Lab results endponts:
 ```sh
-POST v1/lab-results/push?licenseeTsid={TSID}
+POST /lab-results/submit-result
 ```
 ```sh
-GET v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
+GET /lab-results/get?lab_result_tsid={tsid}&lab_sample_tsid={tsid}
 ```
 
 
@@ -89,10 +90,9 @@ GET v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
       "product_lookup": [
         {
           "tsid": "WA0000.IT00000",
-          "vendor_puk":"0120004654",
+          "vendor_sku":"0120004654",
           "product_name": "Sweet Blue Lilac 3.5 g",
-          "uom": "ea",
-          "strain_tsid": "WA00000.S0000",
+          "uom": "ea",         
           "strain_name": "Sweet Blue Lilac",
           "product_type": "Wet Flower",
           "cannabis_content":3.5,
@@ -102,16 +102,21 @@ GET v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
       "lab_result_lookup": [
         {
           "lab_result_tsid": "WA0000.LR0000",
-          "thca_percent": 23.000,
-          "thca_mg_g": 0.000,
-          "thc_percent": 0.300,
-          "thc_mg_g": 0.000,
-          "cbd_percent": 0.000,
-          "cbd_mg_g": 0.000,
-          "cbda_percent": 0.050,
-          "cbda_mg_g": 0.000,
-          "total_cbd": 0.044,
-          "total_thc": 20.471
+	  "sample_tsid": "WA0000.LR0000",
+	  "lab_id" :"",
+	  "lab_name":"",
+	  "compunds":[
+		  {"name":"thca_percent" ,"value": 23.000},
+		  {"name":"thca_mg_g"	,"value": 0.000 },
+		  {"name":"thc_percent"	,"value": 0.300 },
+		  {"name":"thc_mg_g"	,"value": 0.000 },
+		  {"name":"cbd_percent"	,"value": 0.000 },
+		  {"name":"cbd_mg_g"	,"value": 0.000 },
+		  {"name":"cbda_percent" ,"value": 0.050 },
+		  {"name":"cbda_mg_g"	,"value": 0.000 },
+		  {"name":"total_cbd"	,"value": 0.044 },
+		  {"name":"total_thc"	,"value": 20.471},
+	  ]          
         }
       ],
       "transfer_items": [
@@ -204,6 +209,4 @@ GET v1/lab-results/pull?licenseeTsid={TSID}&lab_result_tsid={tsid}
 ]
 ```
 
-### Lab Results 
-- to be added
 
